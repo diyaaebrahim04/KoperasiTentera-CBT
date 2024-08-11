@@ -1,0 +1,12 @@
+/Users/diyaaebrahim/Documents/KoperasiTentera/KoperasiTentera.Domain/bin/Debug/net8.0/KoperasiTentera.Domain.deps.json
+/Users/diyaaebrahim/Documents/KoperasiTentera/KoperasiTentera.Domain/bin/Debug/net8.0/KoperasiTentera.Domain.dll
+/Users/diyaaebrahim/Documents/KoperasiTentera/KoperasiTentera.Domain/bin/Debug/net8.0/KoperasiTentera.Domain.pdb
+/Users/diyaaebrahim/Documents/KoperasiTentera/KoperasiTentera.Domain/obj/Debug/net8.0/KoperasiTentera.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/diyaaebrahim/Documents/KoperasiTentera/KoperasiTentera.Domain/obj/Debug/net8.0/KoperasiTentera.Domain.AssemblyInfoInputs.cache
+/Users/diyaaebrahim/Documents/KoperasiTentera/KoperasiTentera.Domain/obj/Debug/net8.0/KoperasiTentera.Domain.AssemblyInfo.cs
+/Users/diyaaebrahim/Documents/KoperasiTentera/KoperasiTentera.Domain/obj/Debug/net8.0/KoperasiTentera.Domain.csproj.CoreCompileInputs.cache
+/Users/diyaaebrahim/Documents/KoperasiTentera/KoperasiTentera.Domain/obj/Debug/net8.0/KoperasiTentera.Domain.sourcelink.json
+/Users/diyaaebrahim/Documents/KoperasiTentera/KoperasiTentera.Domain/obj/Debug/net8.0/KoperasiTentera.Domain.dll
+/Users/diyaaebrahim/Documents/KoperasiTentera/KoperasiTentera.Domain/obj/Debug/net8.0/refint/KoperasiTentera.Domain.dll
+/Users/diyaaebrahim/Documents/KoperasiTentera/KoperasiTentera.Domain/obj/Debug/net8.0/KoperasiTentera.Domain.pdb
+/Users/diyaaebrahim/Documents/KoperasiTentera/KoperasiTentera.Domain/obj/Debug/net8.0/ref/KoperasiTentera.Domain.dll

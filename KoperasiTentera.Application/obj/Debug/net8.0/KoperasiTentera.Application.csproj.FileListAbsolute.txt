@@ -1,0 +1,16 @@
+/Users/diyaaebrahim/Documents/KoperasiTentera/KoperasiTentera.Application/bin/Debug/net8.0/KoperasiTentera.Application.deps.json
+/Users/diyaaebrahim/Documents/KoperasiTentera/KoperasiTentera.Application/bin/Debug/net8.0/KoperasiTentera.Application.dll
+/Users/diyaaebrahim/Documents/KoperasiTentera/KoperasiTentera.Application/bin/Debug/net8.0/KoperasiTentera.Application.pdb
+/Users/diyaaebrahim/Documents/KoperasiTentera/KoperasiTentera.Application/bin/Debug/net8.0/KoperasiTentera.Domain.dll
+/Users/diyaaebrahim/Documents/KoperasiTentera/KoperasiTentera.Application/bin/Debug/net8.0/KoperasiTentera.Domain.pdb
+/Users/diyaaebrahim/Documents/KoperasiTentera/KoperasiTentera.Application/obj/Debug/net8.0/KoperasiTentera.Application.csproj.AssemblyReference.cache
+/Users/diyaaebrahim/Documents/KoperasiTentera/KoperasiTentera.Application/obj/Debug/net8.0/KoperasiTentera.Application.GeneratedMSBuildEditorConfig.editorconfig
+/Users/diyaaebrahim/Documents/KoperasiTentera/KoperasiTentera.Application/obj/Debug/net8.0/KoperasiTentera.Application.AssemblyInfoInputs.cache
+/Users/diyaaebrahim/Documents/KoperasiTentera/KoperasiTentera.Application/obj/Debug/net8.0/KoperasiTentera.Application.AssemblyInfo.cs
+/Users/diyaaebrahim/Documents/KoperasiTentera/KoperasiTentera.Application/obj/Debug/net8.0/KoperasiTentera.Application.csproj.CoreCompileInputs.cache
+/Users/diyaaebrahim/Documents/KoperasiTentera/KoperasiTentera.Application/obj/Debug/net8.0/KoperasiTentera.Application.sourcelink.json
+/Users/diyaaebrahim/Documents/KoperasiTentera/KoperasiTentera.Application/obj/Debug/net8.0/Koperasi.A2D0E962.Up2Date
+/Users/diyaaebrahim/Documents/KoperasiTentera/KoperasiTentera.Application/obj/Debug/net8.0/KoperasiTentera.Application.dll
+/Users/diyaaebrahim/Documents/KoperasiTentera/KoperasiTentera.Application/obj/Debug/net8.0/refint/KoperasiTentera.Application.dll
+/Users/diyaaebrahim/Documents/KoperasiTentera/KoperasiTentera.Application/obj/Debug/net8.0/KoperasiTentera.Application.pdb
+/Users/diyaaebrahim/Documents/KoperasiTentera/KoperasiTentera.Application/obj/Debug/net8.0/ref/KoperasiTentera.Application.dll

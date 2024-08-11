@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\KoperasiTentera.Domain\KoperasiTentera.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Interfaces\" />
+    <None Remove="DTOs\" />
+    <None Remove="ApplicationServices\" />
+    <None Remove="Enums\" />
+    <None Remove="Common\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Interfaces\" />
+    <Folder Include="DTOs\" />
+    <Folder Include="ApplicationServices\" />
+    <Folder Include="Enums\" />
+    <Folder Include="Common\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
+  </ItemGroup>
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+</Project>
