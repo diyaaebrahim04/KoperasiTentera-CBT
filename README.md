@@ -3,6 +3,9 @@
 ## Overview
 This project is a backend API developed using .NET 8.0 ASP.NET and Entity Framework Core. It is designed to handle a mobile application's user management and verification processes.
 
+<img width="1226" alt="image" src="https://github.com/user-attachments/assets/8da9e78b-f127-4278-b12b-8627b76f3ca2">
+
+
 ## Features
 - User Registration
 - Email and mobile OTP verification
