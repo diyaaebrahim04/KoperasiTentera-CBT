@@ -2,26 +2,30 @@
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.Workbench ActiveDocument="KoperasiTentera.Application/ApplicationServices/UserService.cs">
     <Files>
-      <File FileName="KoperasiTentera.Infrastructure/KoperasiTenteraDbContext.cs" Line="40" Column="46" />
-      <File FileName="KoperasiTentera.API/Controllers/UsersController.cs" Line="22" Column="1" />
-      <File FileName="KoperasiTentera.Application/ApplicationServices/UserService.cs" Line="47" Column="1" />
-      <File FileName="KoperasiTentera.API/Common/ExceptionMiddleware.cs" Line="22" Column="1" />
-      <File FileName="KoperasiTentera.Domain/Entities/User.cs" Line="11" Column="19" />
-      <File FileName="KoperasiTentera.Application/DTOs/CreatePinRequestDto.cs" Line="17" Column="66" />
-      <File FileName="KoperasiTentera.Application/ApplicationServices/OtpService.cs" Line="17" Column="1" />
-      <File FileName="KoperasiTentera.Application/DTOs/RegisterRequestDto.cs" Line="11" Column="54" />
-      <File FileName="KoperasiTentera.Application/DTOs/VerifyOtpRequestDto.cs" Line="25" Column="1" />
-      <File FileName="KoperasiTentera.API/Program.cs" Line="25" Column="54" />
-      <File FileName="KoperasiTentera.Application/Enums/OTPType.cs" Line="6" Column="12" />
-      <File FileName="KoperasiTentera.Application/Common/Exceptions.cs" Line="22" Column="1" />
-      <File FileName="KoperasiTentera.Application/Interfaces/IOTPService.cs" Line="1" Column="1" />
-      <File FileName="KoperasiTentera.Application/Interfaces/IOTPStore.cs" Line="1" Column="1" />
-      <File FileName="KoperasiTentera.Application/ApplicationServices/OTPStore.cs" Line="21" Column="1" />
+      <File FileName="KoperasiTentera.Infrastructure/KoperasiTenteraDbContext.cs" />
+      <File FileName="KoperasiTentera.API/Controllers/UsersController.cs" />
+      <File FileName="KoperasiTentera.Application/ApplicationServices/UserService.cs" Line="56" Column="100" />
+      <File FileName="KoperasiTentera.API/Common/ExceptionMiddleware.cs" />
+      <File FileName="KoperasiTentera.Domain/Entities/User.cs" />
+      <File FileName="KoperasiTentera.Application/DTOs/CreatePinRequestDto.cs" />
+      <File FileName="KoperasiTentera.Application/ApplicationServices/OtpService.cs" />
+      <File FileName="KoperasiTentera.Application/DTOs/RegisterRequestDto.cs" />
+      <File FileName="KoperasiTentera.Application/DTOs/VerifyOtpRequestDto.cs" />
+      <File FileName="KoperasiTentera.API/Program.cs" />
+      <File FileName="KoperasiTentera.Application/Enums/OTPType.cs" />
+      <File FileName="KoperasiTentera.Application/Common/Exceptions.cs" />
+      <File FileName="KoperasiTentera.Application/Interfaces/IOTPService.cs" />
+      <File FileName="KoperasiTentera.Application/Interfaces/IOTPStore.cs" />
+      <File FileName="KoperasiTentera.Application/ApplicationServices/OTPStore.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="KoperasiTentera" expanded="True" />
+          <Node name="KoperasiTentera" expanded="True" selected="True">
+            <Node name="KoperasiTentera.Application">
+              <Node name="ApplicationServices" expanded="True" />
+            </Node>
+          </Node>
         </State>
       </Pad>
     </Pads>

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KoperasiTentera.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+36ccdc7ed768b6f7f7b32ecdc9ad6d12151dff5c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b50b70f05e0e21a49eef93b16a8c5aa30a6c0fcc")]
 [assembly: System.Reflection.AssemblyProductAttribute("KoperasiTentera.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KoperasiTentera.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
