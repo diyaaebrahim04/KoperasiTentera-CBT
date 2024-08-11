@@ -1,10 +1,10 @@
 # KoperasiTentera-CBT
 
 ## Overview
-This project is a backend API developed using ASP.NET Core and Entity Framework Core. It is designed to handle user management and verification processes for a mobile application.
+This project is a backend API developed using .NET 8.0 ASP.NET and Entity Framework Core. It is designed to handle a mobile application's user management and verification processes.
 
 ## Features
-- User registration
+- User Registration
 - Email and mobile OTP verification
 - Entity Framework Core for database operations
 - FluentValidation for input validation
