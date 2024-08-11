@@ -38,8 +38,10 @@ This project is a backend API developed using .NET 8.0 ASP.NET and Entity Framew
 
 ## API Endpoints
 - `POST /api/user/register` - Register a new user
-- `POST /api/user/login` - User login
+- `POST /api/user/login-initiation` - User login initiation
+- `POST /api/user/login-completion` - User login completion
 - `POST /api/user/verify-otp` - Verify OTP for Email/Mobile
+- `POST /api/user/create-pin` - Create user PIN
 
 ## Notes
 - No third-party integrations were included as per assessment instructions.
