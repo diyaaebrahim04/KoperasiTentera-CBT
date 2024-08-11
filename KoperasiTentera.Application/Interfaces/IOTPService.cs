@@ -8,6 +8,6 @@ public interface IOTPService
     string GenerateOtp(string contactInfo);
     bool ValidateOtp(string contactInfo, string code);
     Task SendOtpAsync(string identifier, string otp, OtpType otpType);
-
+    void ForgetOtp(string key);
 }
 

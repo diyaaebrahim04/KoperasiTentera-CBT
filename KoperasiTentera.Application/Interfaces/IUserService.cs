@@ -8,5 +8,7 @@ public interface IUserService
     Task RegisterUserAsync(RegisterRequestDto request);
     Task<bool> VerifyOtpAsync(VerifyOtpRequestDto request);
     Task CreatePinAsync(CreatePinRequestDto request);
+    Task<UserDto> LoginInitiationAsync(LoginInitiationRequestDto request);
+    Task<UserDto> LoginCompletionAsync(LoginCompletionRequestDto request);
 }
 

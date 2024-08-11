@@ -13,14 +13,19 @@ public class UserRepository : IUserRepository
         _context = context;
     }
 
-    public async Task<User> GetUserByEmailAsync(string email)
+    public async Task<User?> GetUserByEmailAsync(string email)
     {
         return await _context.Users.SingleOrDefaultAsync(u => u.EmailAddress == email);
     }
 
-    public async Task<User> GetUserByMobileAsync(string mobile)
+    public async Task<User?> GetUserByMobileAsync(string mobile)
     {
         return await _context.Users.SingleOrDefaultAsync(u => u.MobileNumber == mobile);
+    }
+
+    public async Task<User?> GetUserByICNumberAsync(string icNumber)
+    {
+        return await _context.Users.SingleOrDefaultAsync(u => u.ICNumber == icNumber);
     }
 
     public async Task AddUserAsync(User user)

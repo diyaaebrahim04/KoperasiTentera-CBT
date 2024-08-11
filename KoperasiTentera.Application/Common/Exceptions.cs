@@ -26,6 +26,12 @@ public class EmailOrMobileIsNotVerifiedException : ApplicationException
     public EmailOrMobileIsNotVerifiedException() : base("Email address or/and phone number is/are not verified.") { }
 }
 
+// Exception for invalid PIN
+public class InvalidPINException : ApplicationException
+{
+    public InvalidPINException() : base("Invalid PIN.") { }
+}
+
 // Exception for invalid OTP
 public class InvalidOtpException : ApplicationException
 {

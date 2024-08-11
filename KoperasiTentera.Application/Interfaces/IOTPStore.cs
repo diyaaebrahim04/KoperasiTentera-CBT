@@ -1,8 +1,10 @@
-﻿namespace KoperasiTentera.Application.Interfaces;
+﻿using KoperasiTentera.Application.DTOs;
+
+namespace KoperasiTentera.Application.Interfaces;
 
 public interface IOTPStore
 {
     void StoreOTP(string key, string otp);
-    string RetrieveOTP(string key);
+    OTPDto? RetrieveOTP(string key, string otp);
     void InvalidateOTP(string key);
 }

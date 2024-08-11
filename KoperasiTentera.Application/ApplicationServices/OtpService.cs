@@ -11,27 +11,31 @@ public class OtpService : IOTPService
     {
         _otpStore = otpStore;
     }
-    public string GenerateOtp(string identifier)
+    public string GenerateOtp(string key)
     {
         var otp = new Random().Next(100000, 999999).ToString();
-        _otpStore.StoreOTP(identifier, otp);
+        _otpStore.StoreOTP(key, otp);
         return otp;
     }
 
-    public bool ValidateOtp(string identifier, string otp)
+    public bool ValidateOtp(string key, string otp)
     {
-        return _otpStore.RetrieveOTP(identifier) == otp;
+        return _otpStore.RetrieveOTP(key, otp)?.OTPValue == otp;
     }
 
-    public async Task SendOtpAsync(string identifier, string otp, OtpType otpType)
+    public void ForgetOtp(string key)
+    {
+        _otpStore.InvalidateOTP(key);
+    }
+    public async Task SendOtpAsync(string key, string otp, OtpType otpType)
     {
         switch (otpType)
         {
             case OtpType.Mobile:
-                await sendSmsAsync(identifier, otp);
+                await sendSmsAsync(key, otp);
                 break;
             case OtpType.Email:
-                await sendEmailAsync(identifier, otp);
+                await sendEmailAsync(key, otp);
                 break;
         }
     }

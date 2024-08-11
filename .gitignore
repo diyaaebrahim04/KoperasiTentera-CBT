@@ -9,7 +9,8 @@
 .idea/
 .ionide/
 
-
+.vs/
+
 [Dd]ebug/
 [Dd]ebugPublic/
 [Rr]elease/

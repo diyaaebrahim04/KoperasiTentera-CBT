@@ -32,6 +32,50 @@ public class UsersController : ControllerBase
             return BadRequest(new { ex.Message });
         }
     }
+    [HttpPost("login-initiation")]
+    public async Task<IActionResult> LoginInitiation([FromBody] LoginInitiationRequestDto request)
+    {
+        try
+        {
+            UserDto user = await _userService.LoginInitiationAsync(request);
+            return Ok(user);
+        }
+        catch (UserDoesNotExistException ex)
+        {
+            return BadRequest(new { ex.Message });
+        }
+        catch (ValidationException ex)
+        {
+            return BadRequest(new { ex.Message });
+        }
+    }
+
+    [HttpPost("login-completion")]
+    public async Task<IActionResult> LoginCompletion([FromBody] LoginCompletionRequestDto request)
+    {
+        try
+        {
+            UserDto user = await _userService.LoginCompletionAsync(request);
+            //TOKEN GENERATION CAN BE DONE HERE
+            return Ok(user);
+        }
+        catch (UserDoesNotExistException ex)
+        {
+            return BadRequest(new { ex.Message });
+        }
+        catch (EmailOrMobileIsNotVerifiedException ex)
+        {
+            return BadRequest(new { ex.Message });
+        }
+        catch (InvalidPINException ex)
+        {
+            return BadRequest(new { ex.Message });
+        }
+        catch (ValidationException ex)
+        {
+            return BadRequest(new { ex.Message });
+        }
+    }
 
     [HttpPost("verify-otp")]
     public async Task<IActionResult> VerifyOtp([FromBody] VerifyOtpRequestDto request)
