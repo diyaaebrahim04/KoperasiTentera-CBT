@@ -22,6 +22,7 @@ public class LoginCompletionRequestDto
 {
     public required string ICNumber { get; set; }
     public required string PIN { get; set; }
+    public required bool BiometricEnabled { get; set; }
 }
 
 public class LoginCompletionRequestValidator : AbstractValidator<LoginCompletionRequestDto>

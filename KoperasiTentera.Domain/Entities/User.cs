@@ -11,7 +11,6 @@ public class User
     public string? HashedPin { get; set; }
     public bool IsMobileVerified { get; set; } = false;
     public bool IsEmailVerified { get; set; } = false;
-    public bool IsFingerprintEnabled { get; set; } = false;
-    public bool IsFaceIdEnabled { get; set; } = false;
+    public bool BiometricEnabled { get; set; } = false;
 }
 

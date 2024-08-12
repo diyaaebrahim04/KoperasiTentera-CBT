@@ -33,11 +33,7 @@ public class KoperasiTenteraDbContext : DbContext
             .HasDefaultValue(false);
 
         modelBuilder.Entity<User>()
-            .Property(u => u.IsFingerprintEnabled)
-            .HasDefaultValue(false);
-
-        modelBuilder.Entity<User>()
-            .Property(u => u.IsFaceIdEnabled)
+            .Property(u => u.BiometricEnabled)
             .HasDefaultValue(false);
 
         modelBuilder.Entity<User>()

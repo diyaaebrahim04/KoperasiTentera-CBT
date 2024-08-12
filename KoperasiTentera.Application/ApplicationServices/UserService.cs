@@ -72,21 +72,34 @@ public class UserService : IUserService
     {
         User user = await _userRepository.GetUserByICNumberAsync(request.ICNumber) ?? throw new UserDoesNotExistException();
 
+        if (user.HashedPin != new Domain.ValueObjects.PIN(request.PIN).PinHash)
+        {
+            throw new InvalidPINException();
+        }
+
         if (!user.IsEmailVerified || !user.IsMobileVerified)
         {
             throw new EmailOrMobileIsNotVerifiedException();
         }
-        return user.HashedPin == new Domain.ValueObjects.PIN(request.PIN).PinHash
-            ? new()
-            {
-                FullName = user.FullName,
-                ICNumber = user.ICNumber,
-                IsEmailVerified = user.IsEmailVerified,
-                IsMobileVerified = user.IsMobileVerified,
-                EmailAddress = user.EmailAddress,
-                MobileNumber = user.MobileNumber
-            }
-            : throw new InvalidPINException();
+
+        if (request.BiometricEnabled != user.BiometricEnabled)
+        {
+            user.BiometricEnabled = request.BiometricEnabled;
+            await _userRepository.UpdateUserAsync(user);
+        }
+
+        UserDto userDto = new()
+        {
+            FullName = user.FullName,
+            ICNumber = user.ICNumber,
+            IsEmailVerified = user.IsEmailVerified,
+            IsMobileVerified = user.IsMobileVerified,
+            EmailAddress = user.EmailAddress,
+            MobileNumber = user.MobileNumber,
+            BiometricEnabled = user.BiometricEnabled
+        };
+
+        return userDto;
     }
     public async Task<bool> VerifyOtpAsync(VerifyOtpRequestDto request)
     {
