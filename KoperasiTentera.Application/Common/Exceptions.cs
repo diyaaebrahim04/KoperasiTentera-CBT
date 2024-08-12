@@ -11,31 +11,31 @@ public class ApplicationException : Exception
 // Exception for user already exists
 public class UserAlreadyExistsException : ApplicationException
 {
-    public UserAlreadyExistsException() : base("User already exists.") { }
+    public UserAlreadyExistsException(string? customMessage = null) : base(customMessage ?? "User already exists.") { }
 }
 
 // Exception for user not found
 public class UserDoesNotExistException : ApplicationException
 {
-    public UserDoesNotExistException() : base("User does not exist.") { }
+    public UserDoesNotExistException(string? customMessage = null) : base(customMessage ?? "User does not exist.") { }
 }
 
 // Exception for Email address or/and phone number is/are not verified
 public class EmailOrMobileIsNotVerifiedException : ApplicationException
 {
-    public EmailOrMobileIsNotVerifiedException() : base("Email address or/and phone number is/are not verified.") { }
+    public EmailOrMobileIsNotVerifiedException(string? customMessage = null) : base(customMessage ?? "Email address or/and phone number is/are not verified.") { }
 }
 
 // Exception for invalid PIN
 public class InvalidPINException : ApplicationException
 {
-    public InvalidPINException() : base("Invalid PIN.") { }
+    public InvalidPINException(string? customMessage = null) : base(customMessage ?? "Invalid PIN.") { }
 }
 
 // Exception for invalid OTP
 public class InvalidOtpException : ApplicationException
 {
-    public InvalidOtpException() : base("Invalid OTP.") { }
+    public InvalidOtpException(string? customMessage = null) : base(customMessage ?? "Invalid OTP.") { }
 }
 
 // Exception for failed validation
@@ -47,7 +47,7 @@ public class ValidationException : ApplicationException
 // Exception for unauthorized access
 public class UnauthorizedAccessException : ApplicationException
 {
-    public UnauthorizedAccessException() : base("Unauthorized access.") { }
+    public UnauthorizedAccessException(string? customMessage = null) : base(customMessage ?? "Unauthorized access.") { }
 }
 
 // Exception for not found resource

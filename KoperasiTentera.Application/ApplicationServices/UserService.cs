@@ -18,7 +18,7 @@ public class UserService : IUserService
         _otpService = otpService;
     }
 
-    public async Task RegisterUserAsync(RegisterRequestDto request)
+    public async Task<GenericResponse<UserDto>> RegisterUserAsync(RegisterRequestDto request)
     {
         var user = await _userRepository.GetUserByEmailAsync(request.EmailAddress) ??
                    await _userRepository.GetUserByMobileAsync(request.MobileNumber);
@@ -38,22 +38,35 @@ public class UserService : IUserService
 
         await _userRepository.AddUserAsync(user);
 
+        UserDto userDto = new()
+        {
+            FullName = user.FullName,
+            ICNumber = user.ICNumber,
+            MobileNumber = user.MobileNumber,
+            EmailAddress = user.EmailAddress
+        };
+
         await SendOtp(request.MobileNumber, OtpType.Mobile);
+        string message = "OTP has been sent to " + user.MobileNumber;
+        return new GenericResponse<UserDto>(message, userDto);
     }
 
-    public async Task<UserDto> LoginInitiationAsync(LoginInitiationRequestDto request)
+    public async Task<GenericResponse<UserDto>> LoginInitiationAsync(LoginInitiationRequestDto request)
     {
+        string message = "";
         User user = await _userRepository.GetUserByICNumberAsync(request.ICNumber) ?? throw new UserDoesNotExistException();
 
         if (!user.IsMobileVerified)
         {
             await SendOtp(user.MobileNumber, OtpType.Mobile);
+            message = "OTP has been sent to " + user.MaskedPhoneNumber();
         }
         else
         {
             if (!user.IsEmailVerified)
             {
                 await SendOtp(user.EmailAddress, OtpType.Email);
+                message = "OTP has been sent to " + user.MaskedEmail();
             }
         }
         UserDto userDto = new()
@@ -62,14 +75,15 @@ public class UserService : IUserService
             ICNumber = user.ICNumber,
             IsEmailVerified = user.IsEmailVerified,
             IsMobileVerified = user.IsMobileVerified,
-            EmailAddress = MaskEmail(user.EmailAddress),
-            MobileNumber = MaskPhoneNumber(user.MobileNumber)
+            EmailAddress = user.MaskedEmail(),
+            MobileNumber = user.MaskedPhoneNumber()
         };
-        return userDto;
+        return new GenericResponse<UserDto>(message, userDto);
     }
 
-    public async Task<UserDto> LoginCompletionAsync(LoginCompletionRequestDto request)
+    public async Task<GenericResponse<UserDto>> LoginCompletionAsync(LoginCompletionRequestDto request)
     {
+        string message = "";
         User user = await _userRepository.GetUserByICNumberAsync(request.ICNumber) ?? throw new UserDoesNotExistException();
 
         if (user.HashedPin != new Domain.ValueObjects.PIN(request.PIN).PinHash)
@@ -86,6 +100,7 @@ public class UserService : IUserService
         {
             user.BiometricEnabled = request.BiometricEnabled;
             await _userRepository.UpdateUserAsync(user);
+            message = "Biometric Enabled";
         }
 
         UserDto userDto = new()
@@ -99,10 +114,11 @@ public class UserService : IUserService
             BiometricEnabled = user.BiometricEnabled
         };
 
-        return userDto;
+        return new GenericResponse<UserDto>(message, userDto);
     }
-    public async Task<bool> VerifyOtpAsync(VerifyOtpRequestDto request)
+    public async Task<GenericResponse<bool>> VerifyOtpAsync(VerifyOtpRequestDto request)
     {
+        string message = "";
         User user = request.OTPtypeCd switch
         {
             (int)OtpType.Email => await _userRepository.GetUserByEmailAsync(request.ContactInfo),
@@ -119,14 +135,16 @@ public class UserService : IUserService
                 case (int)OtpType.Mobile:
                     user.IsMobileVerified = true;
                     _ = SendOtp(user.EmailAddress, OtpType.Email);
+                    message = "Mobile Number verified. OTP has been sent to " + user.MaskedEmail();
                     break;
                 case (int)OtpType.Email:
                     user.IsEmailVerified = true;
+                    message = "Email address verified. Proceed to create PIN.";
                     break;
             }
             await _userRepository.UpdateUserAsync(user);
             _otpService.ForgetOtp(request.ContactInfo);
-            return true;
+            return new GenericResponse<bool>(message, true);
         }
         throw new InvalidOtpException();
     }
@@ -146,24 +164,5 @@ public class UserService : IUserService
     {
         string otp = _otpService.GenerateOtp(contactInfo);
         await _otpService.SendOtpAsync(contactInfo, otp, otpType);
-    }
-    private string MaskEmail(string email)
-    {
-        int atIndex = email.IndexOf('@');
-        int dotIndex = email.LastIndexOf('.');
-
-        string firstPart = email[..2];
-        string domain = email[dotIndex..];
-        string maskedEmail = $"{firstPart}****@****{domain}";
-
-        return maskedEmail;
-    }
-
-    private string MaskPhoneNumber(string phoneNumber)
-    {
-        string lastFourDigits = phoneNumber[^4..];
-        string maskedPhoneNumber = new string('*', phoneNumber.Length - 4) + lastFourDigits;
-
-        return maskedPhoneNumber;
     }
 }

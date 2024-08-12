@@ -10,13 +10,11 @@ public class PIN
 
     public PIN(string pin)
     {
-        // Implement hashing here
         PinHash = HashPin(pin);
     }
 
-    private string HashPin(string pin)
+    private static string HashPin(string pin)
     {
-        // Use a secure hashing algorithm like SHA-256 with salt
         var bytes = SHA256.HashData(Encoding.UTF8.GetBytes(pin));
         return Convert.ToBase64String(bytes);
     }

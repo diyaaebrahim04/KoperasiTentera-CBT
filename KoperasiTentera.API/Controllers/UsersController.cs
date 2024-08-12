@@ -37,8 +37,8 @@ public class UsersController : ControllerBase
     {
         try
         {
-            UserDto user = await _userService.LoginInitiationAsync(request);
-            return Ok(user);
+            GenericResponse<UserDto> response = await _userService.LoginInitiationAsync(request);
+            return Ok(response);
         }
         catch (UserDoesNotExistException ex)
         {
@@ -55,9 +55,9 @@ public class UsersController : ControllerBase
     {
         try
         {
-            UserDto user = await _userService.LoginCompletionAsync(request);
+            GenericResponse<UserDto> response = await _userService.LoginCompletionAsync(request);
             //TOKEN GENERATION CAN BE DONE HERE
-            return Ok(user);
+            return Ok(response);
         }
         catch (UserDoesNotExistException ex)
         {
@@ -82,8 +82,8 @@ public class UsersController : ControllerBase
     {
         try
         {
-            await _userService.VerifyOtpAsync(request);
-            return Ok(new { Message = "OTP verified. Proceed to create PIN." });
+            GenericResponse<bool> response = await _userService.VerifyOtpAsync(request);
+            return Ok(new { Message = response.ResponseMessage });
         }
         catch (InvalidOtpException ex)
         {
