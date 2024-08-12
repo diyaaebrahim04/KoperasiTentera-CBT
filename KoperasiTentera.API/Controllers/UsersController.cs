@@ -20,8 +20,8 @@ public class UsersController : ControllerBase
     {
         try
         {
-            await _userService.RegisterUserAsync(request);
-            return Ok(new { Message = "Registration initiated. Verify OTP to complete." });
+            GenericResponse<UserDto> response = await _userService.RegisterUserAsync(request);
+            return Ok(response);
         }
         catch (UserAlreadyExistsException ex)
         {
